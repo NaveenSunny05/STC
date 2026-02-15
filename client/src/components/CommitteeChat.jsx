@@ -75,11 +75,12 @@ export default function CommitteeChat({ user, onClose, isFullPage = false }) {
         }
     }
 
+    const containerClasses = isFullPage
+        ? 'w-full h-[calc(100vh-64px)] bg-gray-900 flex flex-col'
+        : 'fixed bottom-24 right-6 w-96 h-[500px] bg-gray-900 border border-gray-700 rounded-xl shadow-2xl flex flex-col z-50'
+
     return (
-        <div className={`${isFullPage
-            ? 'w-full h-[calc(100vh-64px)] bg-gray-900 flex flex-col'
-            : 'fixed bottom-24 right-6 w-96 h-[500px] bg-gray-900 border border-gray-700 rounded-xl shadow-2xl flex flex-col z-50'
-            }`}>
+        <div className={containerClasses}>
             {/* Header */}
             <div className="p-4 border-b border-gray-800 flex justify-between items-center bg-gray-800 rounded-t-xl">
                 <div className="flex items-center gap-2">
