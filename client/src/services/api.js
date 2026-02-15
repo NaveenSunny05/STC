@@ -9,7 +9,7 @@ const getApiUrl = () => {
   
   // 2. In production, use relative path (same domain)
   if (import.meta.env.PROD) {
-    return '/api'
+    return 'https://stc-back-8dbf.onrender.com/api'
   }
   
   // 3. In development, use localhost
