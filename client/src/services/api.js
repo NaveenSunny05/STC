@@ -13,7 +13,7 @@ const getApiUrl = () => {
   }
   
   // 3. In development, use localhost
-  return 'http://localhost:5000/api'
+  return 'https://stc-back-8dbf.onrender.com/api'
 }
 
 const API_URL = getApiUrl()
