@@ -25,6 +25,7 @@ import TasksPage from './pages/TasksPage'
 import MessagesPage from './pages/MessagesPage'
 import TasksFloatingButton from './components/TasksFloatingButton'
 import MyProjectsPage from './pages/MyProjectsPage'
+import Watermark from './components/Watermark'
 
 // Import all role-specific dashboards
 import ChairDashboard from './pages/ChairDashboard'
@@ -78,7 +79,8 @@ function AppContent() {
   const hideNavbar = location.pathname === '/' || location.pathname === '/login'
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative">
+      <Watermark />
       {user && !hideNavbar && <Navbar user={user} setUser={setUser} />}
 
       <Routes>
@@ -204,10 +206,10 @@ function AppContent() {
       </Routes>
 
       {user && (
-        <>
+        <div className="relative z-10">
           <TasksFloatingButton />
           <ChatbotButton />
-        </>
+        </div>
       )}
     </div>
   )
